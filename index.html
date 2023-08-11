@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborator Score Processing</title>
+</head>
+<body>
+    <h1>Collaborator Score Processing</h1>
+    <form action="/process" method="post">
+        <button type="submit" name="process">Process Data and Update Scores</button>
+        {% if status %}
+        <p>{{ status }}</p>
+        {% endif %}
+    </form>
+    
+    <form action="/retrieve" method="post">
+        <label for="id_to_retrieve">Enter ID to Retrieve:</label>
+        <input type="text" name="id_to_retrieve" id="id_to_retrieve">
+        <button type="submit">Retrieve Score</button>
+    </form>
+
+    {% if result %}
+    <h2>Retrieved Information:</h2>
+    <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
